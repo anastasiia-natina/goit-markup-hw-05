@@ -817,18 +817,18 @@ img {
   position: absolute;
   appearance: none;
 }
-.send-form-checkbox:checked + .checkbox-icon {
+.send-form-checkbox:checked + .custom-checkbox {
   background-color: #404bbf;
   fill: #f4f4fd;
   border: none;
 }
-.send-form-checkbox:focus + .checkbox-icon {
+.send-form-checkbox:focus + .custom-checkbox {
   fill: #f4f4fd;
 }
 .checkbox-link {
   color: #4d5ae5;
 }
-.checkbox-icon {
+.custom-checkbox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
