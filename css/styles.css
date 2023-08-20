@@ -431,7 +431,6 @@ img {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 8px;
 }
 .social-list-link-footer {
   display: flex;
@@ -488,7 +487,7 @@ img {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: 0.04px;
+  letter-spacing: 0.04em;
 }
 .subscribe-btn:focus,
 .subscribe-btn:hover {
@@ -503,14 +502,14 @@ img {
 .subscribe-input-footer {
   font-size: 12px;
   line-height: 1.5;
-  letter-spacing: 0.04;
+  letter-spacing: 0.04em;
   padding-left: 16px;
   color: #ffffff;
   width: 264px;
   height: 40px;
   border-radius: 4px;
   border: 1px solid #fff;
-  background: var(--color-text);
+  background: transparent;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
@@ -664,6 +663,7 @@ img {
 }
 .modal {
   position: absolute;
+  padding: 72px 24px 24px 24px;
   top: 50%;
   min-height: 584px;
   width: 408px;
@@ -711,8 +711,6 @@ img {
 .send-form {
   display: flex;
   flex-direction: column;
-  margin-left: 24px;
-  margin-right: 24px;
 }
 .send-form-description {
   max-width: 360px;
@@ -721,32 +719,37 @@ img {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: 0.32px;
+  letter-spacing: 0.02em;
   margin-bottom: 16px;
-  margin-top: 72px;
 }
-.send-form-field-name {
+.send-form-wrapper {
+  margin-bottom: 8px;
+}
+.send-form-field {
+  display: block;
   color: #8e8f99;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.17;
-  letter-spacing: 0.48px;
+  letter-spacing: 0.04em;
   margin-bottom: 4px;
-  margin-top: 8px;
+}
+.send-form-field-wrapper {
+  position: relative;
 }
 .send-form-input {
   width: 100%;
   height: 40px;
   font-size: 18px;
   border-radius: 4px;
+  background-color: transparent;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  padding-left: 62px;
+  padding-left: 38px;
+  outline: transparent;
   transition: border-color var(--transition-dur-and-func);
 }
 .send-form-input:focus {
   border-color: var(--accent-color);
-  outline-color: transparent;
-  outline-offset: 4px;
 }
 .send-form-icon {
   position: absolute;
@@ -759,34 +762,31 @@ img {
 .send-form-input:focus + .send-form-icon {
   fill: var(--accent-color);
 }
+.message-field {
+  margin-bottom: 16px;
+}
 .message {
   width: 100%;
   height: 120px;
-  font-size: 16px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
   resize: none;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  padding-left: 16px;
-  padding-top: 12px;
+  color: rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: transparent;
   transition: border-color var(--transition-dur-and-func);
 }
 .message:focus {
   border-color: var(--accent-color);
-  outline-color: transparent;
-  outline-offset: 2px;
 }
 .message::placeholder {
   font-size: 12px;
   font-weight: 400;
-  letter-spacing: -0.48px;
+  letter-spacing: 0.48px;
   color: rgba(46, 47, 66, 0.4);
-}
-.send-form-checkbox {
-  position: absolute;
-  appearance: none;
-}
-.send-form-input:focus + .send-form-icon {
-  fill: var(--accent-color);
 }
 .send-form-field-wrapper {
   display: block;
@@ -801,33 +801,42 @@ img {
   line-height: 14px;
   letter-spacing: 0.48px;
   color: rgba(64, 64, 64, 0.6);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   margin-top: 16px;
   color: #8e8f99;
 }
-.checkbox-icon {
-  fill: transparent;
-  stroke: transparent;
-  width: 16px;
-  height: 16px;
-  padding: 4px 3px;
-  cursor: pointer;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  margin-right: 8px;
+.checkbox-name {
+  display: block;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
 }
-.send-form-checkbox:checked + .checkbox-icon {
-  fill: #ffffff;
-  stroke-width: 1px;
+.send-form-checkbox {
+  position: absolute;
+  appearance: none;
+}
+.send-form-checkbox:checked + .custom-checkbox {
+  border: none;
+  fill: #f4f4fd;
   background-color: var(--accent-color);
 }
-
-.send-form-checkbox:focus + .checkbox-icon {
-  border: 1px solid rgba(0, 0, 255, 0.5);
+.send-form-checkbox:focus + .custom-checkbox {
+  fill: #f4f4fd;
 }
-
-.modal-form-link {
+.checkbox-link {
   color: #4d5ae5;
-  line-height: 16px;
+}
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*=========/modal window========*/
