@@ -822,9 +822,6 @@ img {
   fill: #f4f4fd;
   border: none;
 }
-.send-form-checkbox:focus + .custom-checkbox {
-  fill: #f4f4fd;
-}
 .checkbox-link {
   color: #4d5ae5;
 }
